@@ -1,1 +1,1 @@
-Aqui é nois de teste
+Welcome to your first Katacoda Scenario!

@@ -1,1 +1,0 @@
-Ainda não chagamos lá... Aguarde
