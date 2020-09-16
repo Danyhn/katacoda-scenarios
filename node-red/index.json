@@ -1,13 +1,19 @@
 {
-  "title": "Hello World Scenario",
-  "description": "Your First Scenario",
+  "title": "Node-RED",
+  "description": "Treinamento",
   "difficulty": "beginner",
-  "time": "2 minutes",
+  "time": "40 minutes",
   "details": {
-    "steps": [{
+    "steps": [
+      {
       "title": "Step 1 - Run Command",
       "text": "step1.md"
-    }],
+    },
+    {
+      "title": "Step 2 - Run Command",
+      "text": "step2.md"
+    }
+  ],
     "intro": {
       "text": "intro.md",
       "credits": ""
