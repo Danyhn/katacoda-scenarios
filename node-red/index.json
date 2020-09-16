@@ -1,32 +1,24 @@
 {
+  "noindex": true,
   "title": "Node-RED",
-  "description": "Treinamento",
-  "difficulty": "beginner",
-  "time": "40 minutes",
+  "description": "Iniciando Node-RED",
   "details": {
-    "steps": [
-      {
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    },
-    {
-      "title": "Step 2 - Run Command",
-      "text": "step2.md"
-    }
-  ],
-    "intro": {
-      "text": "intro.md",
-      "credits": ""
-    },
-    "finish": {
-      "text": "finish.md"
-    }
+      "steps": [
+          {
+              "title": "",
+              "text": "step1.md"
+          }
+      ]
   },
+  "files": [],
   "environment": {
-    "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+      "hideintro": true, "hidefinish": true,
+      
+      "showvisualise": true,
+      
+      "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "bash"
+      "imageid": "ubuntu"
   }
 }
