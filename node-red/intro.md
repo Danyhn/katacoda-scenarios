@@ -1,6 +1,6 @@
 # Fundamentos de Node-RED
 
-## Nessa aula, veremos como baixar e executar uma imagem do Node-RED e você conhecerá os seguintes componentes:
+#### Nessa aula, veremos como baixar e executar uma imagem do Node-RED e você conhecerá os seguintes componentes:
 
 1. Inject;
 2. Debug;
