@@ -4,11 +4,19 @@
   "description": "Conceitos iniciais e os principais componentes",
   "details": {
       "steps": [
-          {
-              "title": "Baixando e executando uma imagem do Node-RED",
-              "text": "step1.md"
-          }
-      ]
+        {
+            "title": "Baixando e executando uma imagem do Node-RED",
+            "text": "step1.md"
+        },
+        {
+            "title": "Inject, Switch, Function and Debug",
+            "text": "step3.md"
+        },
+        {
+            "title": "SWAPI - The Star Wars API",
+            "text": "step10.md"
+        }
+    ]
   },
   "files": [],
   "environment": {
