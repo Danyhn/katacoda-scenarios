@@ -1,4 +1,3 @@
-
 ### Execute o comando a seguir
 
 `docker run -it -p 80:1880 --name mynodered nodered/node-red`{{execute}}
