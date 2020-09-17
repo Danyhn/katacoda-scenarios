@@ -5,8 +5,7 @@
   "difficulty": "beginner",
   "time": "40 minutes",
   "details": {
-      "steps": [
-        {
+      "steps": [{
             "title": "Baixando e executando uma imagem do Node-RED",
             "text": "step1.md"
         },
@@ -17,14 +16,13 @@
         {
             "title": "SWAPI - The Star Wars API",
             "text": "step10.md"
-        }
-    ],
+        }],
         "intro": {
-        "text": "intro.md",
-        "credits": ""
+            "text": "intro.md",
+            "credits": ""
         },
         "finish": {
-        "text": "finish.md"
+            "text": "finish.md"
         }
     },
   "files": [],
