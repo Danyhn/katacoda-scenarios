@@ -2,6 +2,8 @@
   "noindex": true,
   "title": "Fundamentos de Node-RED",
   "description": "Conceitos iniciais e os principais componentes",
+  "difficulty": "beginner",
+  "time": "40 minutes",
   "details": {
       "steps": [
         {
@@ -16,11 +18,18 @@
             "title": "SWAPI - The Star Wars API",
             "text": "step10.md"
         }
-    ]
-  },
+    ],
+        "intro": {
+        "text": "intro.md",
+        "credits": ""
+        },
+        "finish": {
+        "text": "finish.md"
+        }
+    },
   "files": [],
   "environment": {
-      "hideintro": true, "hidefinish": true,
+      "hideintro": false, "hidefinish": false,
       
       "showvisualise": true,
       
