@@ -1,11 +1,11 @@
 {
   "noindex": true,
-  "title": "Node-RED",
-  "description": "Iniciando Node-RED",
+  "title": "Fundamentos de Node-RED",
+  "description": "Conceitos iniciais e os principais componentes",
   "details": {
       "steps": [
           {
-              "title": "docker run",
+              "title": "Baixando e executando uma imagem do Node-RED",
               "text": "step1.md"
           }
       ]
