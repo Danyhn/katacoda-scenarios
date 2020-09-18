@@ -1,6 +1,6 @@
 {
   "noindex": true,
-  "title": "Fundamentos de Node-RED v: 1.2",
+  "title": "Fundamentos de Node-RED v: 1.5",
   "description": "Conceitos iniciais e os principais componentes",
   "difficulty": "beginner",
   "time": "40 minutes",
@@ -10,12 +10,48 @@
             "text": "step1.md"
         },
         {
+            "title": "Hello, World!",
+            "text": "step2.md"
+        },
+        {
             "title": "Inject, Switch, Function and Debug",
             "text": "step3.md"
         },
         {
+            "title": "Catch Error",
+            "text": "step4.md"
+        },
+        {
+            "title": "Your turn! (1)",
+            "text": "step5.md"
+        },
+        {
+            "title": "Template and Sort",
+            "text": "step6.md"
+        },
+        {
+            "title": "Random and Subflow",
+            "text": "step7.md"
+        },
+        {
+            "title": "Global, Link In and Link out",
+            "text": "step8.md"
+        },
+        {
+            "title": "Your turn! (2)",
+            "text": "step9.md"
+        },
+        {
             "title": "SWAPI - The Star Wars API",
             "text": "step10.md"
+        },
+        {
+            "title": "to do",
+            "text": "step11.md"
+        },
+        {
+            "title": "todo",
+            "text": "step12.md"
         }],
         "intro": {
             "text": "intro.md",

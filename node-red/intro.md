@@ -4,9 +4,10 @@
 2. Debug;
 3. Function;
 4. Switch;
-5. HTTP Request;
-6. Template;
-7. Sort;
-8. Link in / Link out;
-9. Parser;
-10. Instalação de módulos.
+5. Catch Error;
+6. HTTP Request;
+7. Template;
+8. Sort;
+9. Link in / Link out;
+10. Parser;
+11. Instalação de módulos.

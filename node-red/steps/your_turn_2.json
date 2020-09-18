@@ -1,0 +1,133 @@
+[{
+    "id": "ba812835.cfd9f8",
+    "type": "tab",
+    "label": "Your turn! (2)",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "ed16e881.e10f68",
+    "type": "inject",
+    "z": "ba812835.cfd9f8",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 260,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "37136bfc.97ab84",
+    "type": "debug",
+    "z": "ba812835.cfd9f8",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "all",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 80,
+    "y": 60,
+    "wires": []
+}, {
+    "id": "d05f9214.e4993",
+    "type": "function",
+    "z": "ba812835.cfd9f8",
+    "name": "function 3",
+    "func": "msg.func3 = 30\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 80,
+    "y": 220,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "7d0cc5e5.c5185c",
+    "type": "function",
+    "z": "ba812835.cfd9f8",
+    "name": "function 2",
+    "func": "msg.func2 = 20\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 80,
+    "y": 100,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "14a4399f.da98b6",
+    "type": "function",
+    "z": "ba812835.cfd9f8",
+    "name": "function 1",
+    "func": "msg.func1 = 10\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 80,
+    "y": 180,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "cea4d9c9.b21728",
+    "type": "sort",
+    "z": "ba812835.cfd9f8",
+    "name": "",
+    "order": "ascending",
+    "as_num": false,
+    "target": "all",
+    "targetType": "msg",
+    "msgKey": "",
+    "msgKeyType": "elem",
+    "seqKey": "payload",
+    "seqKeyType": "msg",
+    "x": 70,
+    "y": 140,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "e52169ef.04e898",
+    "type": "function",
+    "z": "ba812835.cfd9f8",
+    "name": "function 4",
+    "func": "msg.all = [Number(msg.func1), Number(msg.func2), Number(msg.func3)]\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 80,
+    "y": 300,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "b2607aca.7975e8",
+    "type": "comment",
+    "z": "ba812835.cfd9f8",
+    "name": "README",
+    "info": "Ligue e ordene os componentes de forma que sejam printados na tela, os valores: 30, 20, 10 (nessa ordem).\n\n\nObs.: Não é necessário alterar nenhuma lógica dos componentes.",
+    "x": 740,
+    "y": 60,
+    "wires": []
+}]

@@ -1,0 +1,148 @@
+[{
+    "id": "e5199b2.d925168",
+    "type": "tab",
+    "label": "Inject, Switch, Function and Debug",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "90bfc64e.7341b8",
+    "type": "inject",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "1",
+    "payloadType": "num",
+    "x": 170,
+    "y": 180,
+    "wires": [
+        ["a78507a0.2a1518"]
+    ]
+}, {
+    "id": "f8d238cc.7f7e88",
+    "type": "debug",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 690,
+    "y": 260,
+    "wires": []
+}, {
+    "id": "a78507a0.2a1518",
+    "type": "switch",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [{
+        "t": "eq",
+        "v": "1",
+        "vt": "num"
+    }, {
+        "t": "eq",
+        "v": "2",
+        "vt": "num"
+    }],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 330,
+    "y": 220,
+    "wires": [
+        ["573e8f39.99353"],
+        ["18103410.c96afc"]
+    ]
+}, {
+    "id": "ccb66127.f62d8",
+    "type": "debug",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 690,
+    "y": 180,
+    "wires": []
+}, {
+    "id": "d356e770.f811d8",
+    "type": "inject",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "2",
+    "payloadType": "num",
+    "x": 170,
+    "y": 260,
+    "wires": [
+        ["a78507a0.2a1518"]
+    ]
+}, {
+    "id": "18103410.c96afc",
+    "type": "function",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "func": "msg.payload = \"The number is: \" + msg.payload\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 520,
+    "y": 140,
+    "wires": [
+        ["ccb66127.f62d8"]
+    ]
+}, {
+    "id": "573e8f39.99353",
+    "type": "function",
+    "z": "e5199b2.d925168",
+    "name": "",
+    "func": "msg.payload = \"The number is: \" + msg.payload\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 520,
+    "y": 300,
+    "wires": [
+        ["f8d238cc.7f7e88"]
+    ]
+}, {
+    "id": "6b09a448.e3684c",
+    "type": "comment",
+    "z": "e5199b2.d925168",
+    "name": "Inject, Switch, Function and Debug",
+    "info": "",
+    "x": 280,
+    "y": 60,
+    "wires": []
+}]

@@ -1,0 +1,90 @@
+[{
+    "id": "f367b286.aeeee",
+    "type": "tab",
+    "label": "Catch Error",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "d93a3975.aaece8",
+    "type": "inject",
+    "z": "f367b286.aeeee",
+    "name": "",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Hello, World!",
+    "payloadType": "str",
+    "x": 210,
+    "y": 240,
+    "wires": [
+        ["1c96104f.ea8d5"]
+    ]
+}, {
+    "id": "d1bedbf7.f4cb58",
+    "type": "debug",
+    "z": "f367b286.aeeee",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "x": 530,
+    "y": 280,
+    "wires": []
+}, {
+    "id": "2c05615.86a169e",
+    "type": "comment",
+    "z": "f367b286.aeeee",
+    "name": "Example: Catch Node",
+    "info": "Catch node can catch error caused by specified nodes or all nodes in a flow.  It receives input of target node.",
+    "x": 140,
+    "y": 140,
+    "wires": []
+}, {
+    "id": "f3918c41.eb3ea",
+    "type": "comment",
+    "z": "f367b286.aeeee",
+    "name": "Catch error of a node",
+    "info": "",
+    "x": 180,
+    "y": 200,
+    "wires": []
+}, {
+    "id": "7697bed.6a48d4",
+    "type": "comment",
+    "z": "f367b286.aeeee",
+    "name": "Catch error caused by function node",
+    "info": "",
+    "x": 460,
+    "y": 320,
+    "wires": []
+}, {
+    "id": "3c7ce791.cc5798",
+    "type": "catch",
+    "z": "f367b286.aeeee",
+    "name": "",
+    "scope": ["1c96104f.ea8d5"],
+    "uncaught": false,
+    "x": 380,
+    "y": 280,
+    "wires": [
+        ["d1bedbf7.f4cb58"]
+    ]
+}, {
+    "id": "1c96104f.ea8d5",
+    "type": "function",
+    "z": "f367b286.aeeee",
+    "name": "Error",
+    "func": "throw new Error(\"Error Occured!\")",
+    "outputs": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 370,
+    "y": 240,
+    "wires": []
+}]
