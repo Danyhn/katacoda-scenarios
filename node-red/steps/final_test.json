@@ -1,0 +1,181 @@
+[{
+    "id": "d6b02b9c.29b828",
+    "type": "tab",
+    "label": "Final Test",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "18480295.33397d",
+    "type": "inject",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "props": [{
+        "p": "payload"
+    }, {
+        "p": "topic",
+        "vt": "str"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 100,
+    "y": 40,
+    "wires": [
+        ["d11dd0c6.489b6"]
+    ]
+}, {
+    "id": "a7d03380.394a7",
+    "type": "function",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "func": "msg.count = 1\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 140,
+    "y": 140,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "d11dd0c6.489b6",
+    "type": "link out",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "links": [],
+    "x": 195,
+    "y": 40,
+    "wires": []
+}, {
+    "id": "7db1714c.f8634",
+    "type": "link in",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "links": [],
+    "x": 35,
+    "y": 140,
+    "wires": [
+        ["a7d03380.394a7"]
+    ]
+}, {
+    "id": "7093a44a.bace1c",
+    "type": "function",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "func": "word = {\n    \"one\": \"A\",\n    \"two\": \"C\",\n    \"three\": \"C\",\n    \"four\": \"E\",\n    \"five\": \"N\",\n    \"six\": \"T\",\n    \"seven\": \"U\",\n    \"eight\": \"R\",\n    \"nine\": \"E\"\n}\n\nif (msg.count == 1) {\n    msg.letter = word.one\n} else if (msg.count == 2) {\n    msg.letter = word.two\n} else if (msg.count == 3) {\n    msg.letter = word.three\n} else if (msg.count == 4) {\n    msg.letter = word.four\n} else if (msg.count == 5) {\n    msg.letter = word.five\n} else if (msg.count == 6) {\n    msg.letter = word.six\n} else if (msg.count == 7) {\n    msg.letter = word.seven\n} else if (msg.count == 8) {\n    msg.letter = word.eight\n} else if (msg.count == 9) {\n    msg.letter = word.nine\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 740,
+    "y": 180,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "9a4dbde5.9210d",
+    "type": "debug",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "letter",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 740,
+    "y": 60,
+    "wires": []
+}, {
+    "id": "8c1f10b1.90b6a",
+    "type": "function",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "func": "msg.count += 1\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 740,
+    "y": 100,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "3278895.bd0da76",
+    "type": "trigger",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "op1": "",
+    "op2": "0",
+    "op1type": "nul",
+    "op2type": "str",
+    "duration": "0.5",
+    "extend": false,
+    "units": "s",
+    "reset": "",
+    "bytopic": "all",
+    "topic": "topic",
+    "outputs": 1,
+    "x": 750,
+    "y": 260,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "d25cad52.97c67",
+    "type": "switch",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "property": "count",
+    "propertyType": "msg",
+    "rules": [{
+        "t": "lte",
+        "v": "9",
+        "vt": "num"
+    }, {
+        "t": "gt",
+        "v": "9",
+        "vt": "num"
+    }],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 730,
+    "y": 220,
+    "wires": [
+        [],
+        []
+    ]
+}, {
+    "id": "65726b52.615c24",
+    "type": "function",
+    "z": "d6b02b9c.29b828",
+    "name": "",
+    "func": "node.warn(\"Congratulations!\")",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 740,
+    "y": 140,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "37f0734e.385f6c",
+    "type": "comment",
+    "z": "d6b02b9c.29b828",
+    "name": "README",
+    "info": "Ligue e ordene os componentes de forma que a palavra: \"Accenture\" seja printada na tela.\n\n\nObs.: Não é necessário alterar nenhuma lógica dos componentes.",
+    "x": 80,
+    "y": 560,
+    "wires": []
+}]
