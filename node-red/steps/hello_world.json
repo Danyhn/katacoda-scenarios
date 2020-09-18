@@ -1,0 +1,55 @@
+[{
+    "id": "17f5bfa8.03378",
+    "type": "tab",
+    "label": "Hello, World!",
+    "disabled": false,
+    "info": ""
+}, {
+    "id": "d6c05bd7.e87538",
+    "type": "comment",
+    "z": "17f5bfa8.03378",
+    "name": "Output payload value to debug sidebar",
+    "info": "Debug node can be used to output payload value to debug sidebar.",
+    "x": 290,
+    "y": 220,
+    "wires": []
+}, {
+    "id": "69e6a80e.f6fbc8",
+    "type": "inject",
+    "z": "17f5bfa8.03378",
+    "name": "",
+    "props": [{
+        "p": "payload",
+        "v": "Hello, World!",
+        "vt": "str"
+    }, {
+        "p": "topic",
+        "v": "",
+        "vt": "string"
+    }],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "Hello, World!",
+    "payloadType": "str",
+    "x": 270,
+    "y": 260,
+    "wires": [
+        ["f3f08699.b86508"]
+    ]
+}, {
+    "id": "f3f08699.b86508",
+    "type": "debug",
+    "z": "17f5bfa8.03378",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 510,
+    "y": 260,
+    "wires": []
+}]
