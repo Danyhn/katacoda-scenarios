@@ -1,13 +1,13 @@
 [{
-    "id": "d6b02b9c.29b828",
+    "id": "861abc71.70006",
     "type": "tab",
     "label": "Final Test",
     "disabled": false,
     "info": ""
 }, {
-    "id": "18480295.33397d",
+    "id": "f185bbb1.f1c948",
     "type": "inject",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "props": [{
         "p": "payload"
@@ -25,62 +25,62 @@
     "x": 100,
     "y": 40,
     "wires": [
-        ["d11dd0c6.489b6"]
+        ["38bd8e6.b460872"]
     ]
 }, {
-    "id": "a7d03380.394a7",
+    "id": "80d5adef.144e",
     "type": "function",
-    "z": "d6b02b9c.29b828",
-    "name": "",
+    "z": "861abc71.70006",
+    "name": "Declara Count",
     "func": "msg.count = 1\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 140,
+    "x": 160,
     "y": 140,
     "wires": [
         []
     ]
 }, {
-    "id": "d11dd0c6.489b6",
+    "id": "38bd8e6.b460872",
     "type": "link out",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "links": [],
     "x": 195,
     "y": 40,
     "wires": []
 }, {
-    "id": "7db1714c.f8634",
+    "id": "336b4161.37803e",
     "type": "link in",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "links": [],
     "x": 35,
     "y": 140,
     "wires": [
-        ["a7d03380.394a7"]
+        ["80d5adef.144e"]
     ]
 }, {
-    "id": "7093a44a.bace1c",
+    "id": "9895473.ca21bb8",
     "type": "function",
-    "z": "d6b02b9c.29b828",
-    "name": "",
+    "z": "861abc71.70006",
+    "name": "Lógica",
     "func": "word = {\n    \"one\": \"A\",\n    \"two\": \"C\",\n    \"three\": \"C\",\n    \"four\": \"E\",\n    \"five\": \"N\",\n    \"six\": \"T\",\n    \"seven\": \"U\",\n    \"eight\": \"R\",\n    \"nine\": \"E\"\n}\n\nif (msg.count == 1) {\n    msg.letter = word.one\n} else if (msg.count == 2) {\n    msg.letter = word.two\n} else if (msg.count == 3) {\n    msg.letter = word.three\n} else if (msg.count == 4) {\n    msg.letter = word.four\n} else if (msg.count == 5) {\n    msg.letter = word.five\n} else if (msg.count == 6) {\n    msg.letter = word.six\n} else if (msg.count == 7) {\n    msg.letter = word.seven\n} else if (msg.count == 8) {\n    msg.letter = word.eight\n} else if (msg.count == 9) {\n    msg.letter = word.nine\n}\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 740,
+    "x": 730,
     "y": 180,
     "wires": [
         []
     ]
 }, {
-    "id": "9a4dbde5.9210d",
+    "id": "51561ad8.16cf44",
     "type": "debug",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "active": true,
     "tosidebar": true,
@@ -94,24 +94,24 @@
     "y": 60,
     "wires": []
 }, {
-    "id": "8c1f10b1.90b6a",
+    "id": "cffb512e.786c9",
     "type": "function",
-    "z": "d6b02b9c.29b828",
-    "name": "",
+    "z": "861abc71.70006",
+    "name": "Soma Count",
     "func": "msg.count += 1\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 740,
+    "x": 750,
     "y": 100,
     "wires": [
         []
     ]
 }, {
-    "id": "3278895.bd0da76",
+    "id": "eaace8e8.192bf8",
     "type": "trigger",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "op1": "",
     "op2": "0",
@@ -130,9 +130,9 @@
         []
     ]
 }, {
-    "id": "d25cad52.97c67",
+    "id": "24ccfc04.11e1a4",
     "type": "switch",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "",
     "property": "count",
     "propertyType": "msg",
@@ -155,24 +155,24 @@
         []
     ]
 }, {
-    "id": "65726b52.615c24",
+    "id": "3096a3fe.bd09ac",
     "type": "function",
-    "z": "d6b02b9c.29b828",
-    "name": "",
+    "z": "861abc71.70006",
+    "name": "Warn",
     "func": "node.warn(\"Congratulations!\")",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 740,
+    "x": 730,
     "y": 140,
     "wires": [
         []
     ]
 }, {
-    "id": "37f0734e.385f6c",
+    "id": "830f712f.273a7",
     "type": "comment",
-    "z": "d6b02b9c.29b828",
+    "z": "861abc71.70006",
     "name": "README",
     "info": "Ligue e ordene os componentes de forma que a palavra: \"Accenture\" seja printada na tela.\n\n\nObs.: Não é necessário alterar nenhuma lógica dos componentes.",
     "x": 80,
