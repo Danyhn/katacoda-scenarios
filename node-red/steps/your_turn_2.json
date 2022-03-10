@@ -27,7 +27,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
+        "x": 140,
         "y": 260,
         "wires": [
             []
@@ -46,7 +46,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 80,
+        "x": 120,
         "y": 60,
         "wires": []
     },
@@ -60,8 +60,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 80,
-        "y": 220,
+        "x": 120,
+        "y": 300,
         "wires": [
             []
         ]
@@ -76,7 +76,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 80,
+        "x": 120,
         "y": 100,
         "wires": [
             []
@@ -92,7 +92,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 80,
+        "x": 120,
         "y": 180,
         "wires": [
             []
@@ -111,7 +111,7 @@
         "msgKeyType": "elem",
         "seqKey": "payload",
         "seqKeyType": "msg",
-        "x": 70,
+        "x": 110,
         "y": 140,
         "wires": [
             []
@@ -127,8 +127,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 80,
-        "y": 300,
+        "x": 120,
+        "y": 220,
         "wires": [
             []
         ]
@@ -138,9 +138,19 @@
         "type": "comment",
         "z": "ba812835.cfd9f8",
         "name": "README",
-        "info": "Nesse desafio iremos utilizar alguns dos nós que já vimos anteriormente e precisamos que uma informação seja exibida:\n\n - Ligue e ordene os componentes de forma com que sejam exibidos na tela de debug, os valores: 30, 20, 10 (nessa ordem).\n\nDica:\n\n * Não é necessário alterar nenhuma lógica dos componentes.",
+        "info": "Nesse desafio iremos utilizar alguns dos nós que já vimos anteriormente e precisamos que uma informação seja exibida:\n\n - Ligue e ordene os componentes de forma com que sejam exibidos na tela de debug, os valores: `30, 20, 10` (nessa ordem).\n\nDica:\n\n * Não é necessário alterar nenhuma lógica dos componentes.",
         "x": 740,
         "y": 60,
+        "wires": []
+    },
+    {
+        "id": "952eb34ea3f8b986",
+        "type": "comment",
+        "z": "ba812835.cfd9f8",
+        "name": "Resposta",
+        "info": "O primeiro passo aqui é identificar os pontos de início e de fim. Que neste caso serão os nós `Inject` e `Debug`, respectivamente. E de forma intuitiva, podemos ligar as funções umas nas outras, seguindo a ordem numérica e acrescentar os nós de início e de fim. Por fim, ligue o nó `Sort` entre os nós `function 4` e `Debug`.\n\nNeste ponto, já temos um valor sendo exibido na tela de debug. Porém, não está ordenado de acordo com o teste. Para ajustar a classificação, edite o nó `Sort` e altere a propriedade `Order` para `descending`.",
+        "x": 920,
+        "y": 500,
         "wires": []
     }
 ]

@@ -56,6 +56,7 @@
         "type": "link out",
         "z": "861abc71.70006",
         "name": "",
+        "mode": "link",
         "links": [],
         "x": 195,
         "y": 40,
@@ -85,7 +86,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 730,
+        "x": 650,
         "y": 180,
         "wires": [
             []
@@ -104,7 +105,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
+        "x": 660,
         "y": 60,
         "wires": []
     },
@@ -118,7 +119,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 750,
+        "x": 670,
         "y": 100,
         "wires": [
             []
@@ -140,7 +141,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 750,
+        "x": 670,
         "y": 260,
         "wires": [
             []
@@ -168,7 +169,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 730,
+        "x": 650,
         "y": 220,
         "wires": [
             [],
@@ -185,7 +186,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 730,
+        "x": 650,
         "y": 140,
         "wires": [
             []
@@ -198,6 +199,16 @@
         "name": "README",
         "info": "Bom... este é o momento de sabermos o quanto aprendeu! Utilize todo o seu conhecimento e resolva esse problema:\n\n\n - Ligue e ordene os componentes de forma com que a palavra: `Accenture` seja formada na tela de debug (letra após letra).\n\n\nDica:\n\n * Não é necessário alterar nenhuma lógica dos componentes.\n\n\n\n\n\nPs.: nesse teste nós temos um nó que não vimos em nenhuma aula 😈! Veremos se consegue utilizar o nó `trigger` da maneira correta...",
         "x": 80,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "16f325433104e366",
+        "type": "comment",
+        "z": "861abc71.70006",
+        "name": "Resposta",
+        "info": "Assim como os desafios anteriores, aqui também podemos iniciar da mesma maneira: identificar os pontos de início e de fim: `Inject` e `Debug`. Com isto, podemos focar nos demais componentes entre eles.\n\nExiste uma dica escondida logo de cara... temos um nó `Link Out` conectado ao nó `Inject`. Se temos um nó desses, podemos ter a certeza de que teremos que conectá-lo ao nó `Link In`. Então já podemos editar qualquer um dos dois e selecionar o nó par. Você saberá que estão devidamente conectados quando clicar em um deles e aparecer uma linha tracejada entre os dois.\n\nAgora, existem duas formas de concluir esse teste: ir ligando todos os componentes e ir testando, na base da tentativa e erro... ou abrir cada nó e entender o que estão fazendo. Claro, para essa segunda forma, um pouco de entendimento em JavaScript é necessário. Independente da sua forma de resolver, eis a sequência correta:\n\n`Inject` > `Declara Count` > `Lógica` > `switch`\n\nAgora essa é parte importante. Devemos ligar corretamente as saídas do `switch`, ou então teremos diversos comportamentos de loop. Essa é a maneira correta:\n\n`switch saída 1` > `Soma Count` && `Debug`\n`switch saída 2` > `Warn` > `Debug`\n\nPerceba que a saída 1 ligará dois nós ao mesmo tempo. E a partir daqui, teremos dois caminhos:\n\nCaminho 1:\n`Soma Count` > `trigger` > `Lógica`\n\nCaminho 2:\n`Warn` > `Debug`\n\nTalvez na primeira vez que estiver montando, tenha dificuldades em deixar o espaço \"apresentável\". É muito comum deixar o ambiente uma bagunça! Mas é de nossa reponsabilidade que o código fique o mais legível possível.",
+        "x": 980,
         "y": 560,
         "wires": []
     }

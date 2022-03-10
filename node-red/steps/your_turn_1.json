@@ -96,5 +96,15 @@
         "x": 80,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "ef89a523f666644c",
+        "type": "comment",
+        "z": "683222d3.3bcc7c",
+        "name": "Resposta",
+        "info": "O primeiro passo, obviamente, é ligar os nós `Function` e `Debug`. Mas perceba que não temos o resultado esperado.\n\nSe olharmos com mais cuidado a nossa função `Dobro / Metade`, notamos que ela prepara dois objetos: `msg.payload` e `msg.payload2` e retorna ambos os valores através do `msg`. Tudo ok até aqui!\n\nO ponto de atenção fica nos nós de `Debug`. Ambos estão retornando o objeto `msg.payload`, o que faz com que a nossa saída fique duplicada.\n\nPara corrigir este cenário, devemos simplesmente alterar um dos nós de `Debug`, informando o segundo objeto: `msg.payload2`.",
+        "x": 1080,
+        "y": 560,
+        "wires": []
     }
 ]
