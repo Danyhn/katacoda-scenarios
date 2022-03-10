@@ -10,7 +10,7 @@
         "id": "d6c05bd7.e87538",
         "type": "comment",
         "z": "17f5bfa8.03378",
-        "name": "Payload e debug",
+        "name": "Payload e debug (clique duas vezes aqui)",
         "info": "O nó de `Inject` (azul) pode ser usado para gerar o valor do payload e conectado ao nó de `Debug` (verde).\n\nAo clicar no botão (ao lado esquerdo) do nó `Inject`, você verá o payload sendo carregado na tela lateral de debug.\n\nPerceba que o nó `Inject` pode ser carregado com vários tipos de payload, desde strings, objetos e até mesmo expressões. Dê uma olhada em algumas dessas opções! \n\nDica: na barra lateral direita, clique no ícone de debug (parece uma joaninha).",
         "x": 220,
         "y": 220,
