@@ -1,4 +1,5 @@
 Execute o comando abaixo.
+
 Dica: Você pode clicar com o botão esquerdo do mouse no comando e será executado automaticamente.
 
 `docker run -it -p 80:1880 --name mynodered nodered/node-red`{{execute}}
