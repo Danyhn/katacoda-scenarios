@@ -1,85 +1,100 @@
-[{
-    "id": "683222d3.3bcc7c",
-    "type": "tab",
-    "label": "Your turn! (1)",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "8a314d9f.1c916",
-    "type": "inject",
-    "z": "683222d3.3bcc7c",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "10",
-    "payloadType": "num",
-    "x": 90,
-    "y": 320,
-    "wires": [
-        ["32308ef1.9debb2"]
-    ]
-}, {
-    "id": "32308ef1.9debb2",
-    "type": "function",
-    "z": "683222d3.3bcc7c",
-    "name": "Dobro / Metade",
-    "func": "msg.payload2 = \"A metade de 10 é \" + msg.payload / 2\n\nmsg.payload = \"O dobro de 10 é \" + msg.payload * 2\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 280,
-    "y": 240,
-    "wires": [
-        ["2ba852c.eb27eae"]
-    ]
-}, {
-    "id": "2ba852c.eb27eae",
-    "type": "debug",
-    "z": "683222d3.3bcc7c",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 490,
-    "y": 320,
-    "wires": []
-}, {
-    "id": "630d67fe.3cd488",
-    "type": "debug",
-    "z": "683222d3.3bcc7c",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "payload",
-    "targetType": "msg",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 490,
-    "y": 160,
-    "wires": []
-}, {
-    "id": "283372ee.18527e",
-    "type": "comment",
-    "z": "683222d3.3bcc7c",
-    "name": "README",
-    "info": "Existe um problema na lógica e você precisa corrigir. \nO debug precisa printar dois valores: O dobro e a metade de 10.",
-    "x": 80,
-    "y": 60,
-    "wires": []
-}]
+[
+    {
+        "id": "683222d3.3bcc7c",
+        "type": "tab",
+        "label": "Your turn! (1)",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8a314d9f.1c916",
+        "type": "inject",
+        "z": "683222d3.3bcc7c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "32308ef1.9debb2"
+            ]
+        ]
+    },
+    {
+        "id": "32308ef1.9debb2",
+        "type": "function",
+        "z": "683222d3.3bcc7c",
+        "name": "Dobro / Metade",
+        "func": "msg.payload2 = \"A metade de 10 é \" + msg.payload / 2\n\nmsg.payload = \"O dobro de 10 é \" + msg.payload * 2\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "2ba852c.eb27eae"
+            ]
+        ]
+    },
+    {
+        "id": "2ba852c.eb27eae",
+        "type": "debug",
+        "z": "683222d3.3bcc7c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "630d67fe.3cd488",
+        "type": "debug",
+        "z": "683222d3.3bcc7c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "283372ee.18527e",
+        "type": "comment",
+        "z": "683222d3.3bcc7c",
+        "name": "README",
+        "info": "Existe um problema no fluxo e você precisa corrigir:\n\n - O debug precisa exibir dois valores: O dobro e a metade de 10.\n\n\nDicas:\n\n * É necessário estar com a tela lateral de debug ativada e clicar no botão do nó `Inject`;\n * Fique atento aos nomes dos objetos, assim como os caminhos que seguirão;\n * Não é necessário alterar o código do nó `Function`.\n\n\nResultado esperado:\n\n\"A metade de 10 é 5\"\n\"A dobro de 10 é 20\"",
+        "x": 80,
+        "y": 60,
+        "wires": []
+    }
+]

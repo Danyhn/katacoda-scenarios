@@ -1,517 +1,565 @@
-[{
-    "id": "ed67f8ab.5fc108",
-    "type": "tab",
-    "label": "Template and Sort",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "3c61b895.6f3678",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "ascending",
-    "as_num": false,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "",
-    "msgKeyType": "elem",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 160,
-    "wires": [
-        ["1a710521.65c61b"]
-    ]
-}, {
-    "id": "6a98759c.07c96c",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "props": [{
-        "p": "payload",
-        "v": "",
-        "vt": "date"
-    }, {
-        "p": "topic",
-        "v": "",
-        "vt": "string"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 160,
-    "wires": [
-        ["f469d5c1.5ddf08"]
-    ]
-}, {
-    "id": "7e588e51.c477e",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array payload as string in ascending order",
-    "info": "",
-    "x": 240,
-    "y": 100,
-    "wires": []
-}, {
-    "id": "f469d5c1.5ddf08",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    \"orange\",\n    \"banana\",\n    \"apple\",\n    \"pear\",\n    \"kiwi\"\n]",
-    "output": "json",
-    "x": 330,
-    "y": 160,
-    "wires": [
-        ["3c61b895.6f3678"]
-    ]
-}, {
-    "id": "1a710521.65c61b",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 160,
-    "wires": []
-}, {
-    "id": "dae3c26a.1be74",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "ascending",
-    "as_num": false,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "",
-    "msgKeyType": "elem",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 480,
-    "wires": [
-        ["80c4f3d2.19181"]
-    ]
-}, {
-    "id": "a506accb.83114",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 480,
-    "wires": [
-        ["7e921d9a.9f2674"]
-    ]
-}, {
-    "id": "169a34d3.e8311b",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array payload as string",
-    "info": "",
-    "x": 180,
-    "y": 420,
-    "wires": []
-}, {
-    "id": "7e921d9a.9f2674",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    \"1024\",\n    \"86\",\n    \"256\",\n    \"100\",\n    \"9\"\n]",
-    "output": "json",
-    "x": 330,
-    "y": 480,
-    "wires": [
-        ["dae3c26a.1be74"]
-    ]
-}, {
-    "id": "80c4f3d2.19181",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 480,
-    "wires": []
-}, {
-    "id": "19e02dd0.5398e2",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "ascending",
-    "as_num": true,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "",
-    "msgKeyType": "elem",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 640,
-    "wires": [
-        ["9fffc1ab.e5d4c"]
-    ]
-}, {
-    "id": "5eade78f.b43c18",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 640,
-    "wires": [
-        ["6c306e29.b57a"]
-    ]
-}, {
-    "id": "260d60c3.5b05",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array payload as number",
-    "info": "",
-    "x": 180,
-    "y": 580,
-    "wires": []
-}, {
-    "id": "6c306e29.b57a",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    \"1024\",\n    \"86\",\n    \"256\",\n    \"100\",\n    \"9\"\n]",
-    "output": "json",
-    "x": 330,
-    "y": 640,
-    "wires": [
-        ["19e02dd0.5398e2"]
-    ]
-}, {
-    "id": "9fffc1ab.e5d4c",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 640,
-    "wires": []
-}, {
-    "id": "225201a4.195dbe",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "ascending",
-    "as_num": false,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "price",
-    "msgKeyType": "jsonata",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 800,
-    "wires": [
-        ["8b8cda2f.5d55a8"]
-    ]
-}, {
-    "id": "c2451700.0ecb38",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 800,
-    "wires": [
-        ["bda066bd.bd6418"]
-    ]
-}, {
-    "id": "21588383.7e713c",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array of objects payload using simple JSONata expression",
-    "info": "",
-    "x": 290,
-    "y": 740,
-    "wires": []
-}, {
-    "id": "bda066bd.bd6418",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    {\n        \"name\": \"orange\", \n        \"price\": 80\n    },\n    {\n        \"name\": \"banana\",\n        \"price\": 250\n    },\n    {\n        \"name\": \"apple\",\n        \"price\": 100\n    },\n    {\n        \"name\": \"pear\",\n        \"price\": 150\n    },\n    {\n        \"name\": \"kiwi\",\n        \"price\": 320\n    }\n]",
-    "output": "json",
-    "x": 330,
-    "y": 800,
-    "wires": [
-        ["225201a4.195dbe"]
-    ]
-}, {
-    "id": "8b8cda2f.5d55a8",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 800,
-    "wires": []
-}, {
-    "id": "2163e62f.7d1f2a",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "descending",
-    "as_num": false,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "",
-    "msgKeyType": "elem",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 320,
-    "wires": [
-        ["42ed9ac8.867944"]
-    ]
-}, {
-    "id": "e1497a97.6ade58",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 320,
-    "wires": [
-        ["ad4b9d80.d39eb"]
-    ]
-}, {
-    "id": "8c42a499.446d68",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array payload as string in descending order",
-    "info": "",
-    "x": 240,
-    "y": 260,
-    "wires": []
-}, {
-    "id": "ad4b9d80.d39eb",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    \"orange\",\n    \"banana\",\n    \"apple\",\n    \"pear\",\n    \"kiwi\"\n]",
-    "output": "json",
-    "x": 330,
-    "y": 320,
-    "wires": [
-        ["2163e62f.7d1f2a"]
-    ]
-}, {
-    "id": "42ed9ac8.867944",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 320,
-    "wires": []
-}, {
-    "id": "b43964b7.89eef8",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort using object property as sorting key",
-    "info": "",
-    "x": 580,
-    "y": 840,
-    "wires": []
-}, {
-    "id": "70dec30c.a3adac",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort payload as array of number",
-    "info": "",
-    "x": 560,
-    "y": 680,
-    "wires": []
-}, {
-    "id": "858b7a83.53f328",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort payload as array of string",
-    "info": "",
-    "x": 550,
-    "y": 520,
-    "wires": []
-}, {
-    "id": "c0ce146b.76e0b8",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort payload as array of string in descending order",
-    "info": "",
-    "x": 610,
-    "y": 360,
-    "wires": []
-}, {
-    "id": "4d097811.4b5f58",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort payload as array of string in ascending order",
-    "info": "",
-    "x": 610,
-    "y": 200,
-    "wires": []
-}, {
-    "id": "a4a44453.223968",
-    "type": "sort",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "order": "ascending",
-    "as_num": false,
-    "target": "payload",
-    "targetType": "msg",
-    "msgKey": "$substring(\"0000\" & $string(price), -4) & name",
-    "msgKeyType": "jsonata",
-    "seqKey": "payload",
-    "seqKeyType": "msg",
-    "x": 470,
-    "y": 960,
-    "wires": [
-        ["c031de28.02458"]
-    ]
-}, {
-    "id": "113935f2.17c15a",
-    "type": "inject",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 180,
-    "y": 960,
-    "wires": [
-        ["f19e4009.d51f1"]
-    ]
-}, {
-    "id": "224ecc4c.e84404",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Sort array of objects payload using complex JSONata expression",
-    "info": "",
-    "x": 290,
-    "y": 900,
-    "wires": []
-}, {
-    "id": "f19e4009.d51f1",
-    "type": "template",
-    "z": "ed67f8ab.5fc108",
-    "name": "data",
-    "field": "payload",
-    "fieldType": "msg",
-    "format": "json",
-    "syntax": "mustache",
-    "template": "[\n    {\n        \"name\": \"orange\", \n        \"price\": 100\n    },\n    {\n        \"name\": \"banana\",\n        \"price\": 200\n    },\n    {\n        \"name\": \"apple\",\n        \"price\": 100\n    },\n    {\n        \"name\": \"pear\",\n        \"price\": 200\n    },\n    {\n        \"name\": \"kiwi\",\n        \"price\": 200\n    }\n]",
-    "output": "json",
-    "x": 330,
-    "y": 960,
-    "wires": [
-        ["a4a44453.223968"]
-    ]
-}, {
-    "id": "c031de28.02458",
-    "type": "debug",
-    "z": "ed67f8ab.5fc108",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 630,
-    "y": 960,
-    "wires": []
-}, {
-    "id": "3262a66.103325a",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "↑ sort using object two property (price and name) as sorting keys",
-    "info": "",
-    "x": 650,
-    "y": 1000,
-    "wires": []
-}, {
-    "id": "368675eb.ed39ca",
-    "type": "comment",
-    "z": "ed67f8ab.5fc108",
-    "name": "Example: Sort Array Payload",
-    "info": "Sort node can be used to message payload that points to a JavaScript array.  It can specify sort order and sort key.  Sort key can be payload value or JSONata expression.  If JSONata expression is used, the expression is applied to `payload` value.\n",
-    "x": 140,
-    "y": 40,
-    "wires": []
-}]
+[
+    {
+        "id": "ed67f8ab.5fc108",
+        "type": "tab",
+        "label": "Template and Sort",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3c61b895.6f3678",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "1a710521.65c61b"
+            ]
+        ]
+    },
+    {
+        "id": "6a98759c.07c96c",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "f469d5c1.5ddf08"
+            ]
+        ]
+    },
+    {
+        "id": "7e588e51.c477e",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array como string em ordem crescente",
+        "info": "",
+        "x": 300,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f469d5c1.5ddf08",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    \"orange\",\n    \"banana\",\n    \"apple\",\n    \"pear\",\n    \"kiwi\"\n]",
+        "output": "json",
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "3c61b895.6f3678"
+            ]
+        ]
+    },
+    {
+        "id": "1a710521.65c61b",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "dae3c26a.1be74",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "80c4f3d2.19181"
+            ]
+        ]
+    },
+    {
+        "id": "a506accb.83114",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 580,
+        "wires": [
+            [
+                "7e921d9a.9f2674"
+            ]
+        ]
+    },
+    {
+        "id": "169a34d3.e8311b",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array como string",
+        "info": "",
+        "x": 230,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7e921d9a.9f2674",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    \"1024\",\n    \"86\",\n    \"256\",\n    \"100\",\n    \"9\"\n]",
+        "output": "json",
+        "x": 350,
+        "y": 580,
+        "wires": [
+            [
+                "dae3c26a.1be74"
+            ]
+        ]
+    },
+    {
+        "id": "80c4f3d2.19181",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "19e02dd0.5398e2",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "ascending",
+        "as_num": true,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 740,
+        "wires": [
+            [
+                "9fffc1ab.e5d4c"
+            ]
+        ]
+    },
+    {
+        "id": "5eade78f.b43c18",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 740,
+        "wires": [
+            [
+                "6c306e29.b57a"
+            ]
+        ]
+    },
+    {
+        "id": "260d60c3.5b05",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array como número",
+        "info": "",
+        "x": 230,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6c306e29.b57a",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    \"1024\",\n    \"86\",\n    \"256\",\n    \"100\",\n    \"9\"\n]",
+        "output": "json",
+        "x": 350,
+        "y": 740,
+        "wires": [
+            [
+                "19e02dd0.5398e2"
+            ]
+        ]
+    },
+    {
+        "id": "9fffc1ab.e5d4c",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "225201a4.195dbe",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "price",
+        "msgKeyType": "jsonata",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 900,
+        "wires": [
+            [
+                "8b8cda2f.5d55a8"
+            ]
+        ]
+    },
+    {
+        "id": "c2451700.0ecb38",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 900,
+        "wires": [
+            [
+                "bda066bd.bd6418"
+            ]
+        ]
+    },
+    {
+        "id": "21588383.7e713c",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array de objetos usando a expressão JSONata simples",
+        "info": "",
+        "x": 350,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "bda066bd.bd6418",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    {\n        \"name\": \"orange\", \n        \"price\": 80\n    },\n    {\n        \"name\": \"banana\",\n        \"price\": 250\n    },\n    {\n        \"name\": \"apple\",\n        \"price\": 100\n    },\n    {\n        \"name\": \"pear\",\n        \"price\": 150\n    },\n    {\n        \"name\": \"kiwi\",\n        \"price\": 320\n    }\n]",
+        "output": "json",
+        "x": 350,
+        "y": 900,
+        "wires": [
+            [
+                "225201a4.195dbe"
+            ]
+        ]
+    },
+    {
+        "id": "8b8cda2f.5d55a8",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "2163e62f.7d1f2a",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "descending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "",
+        "msgKeyType": "elem",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "42ed9ac8.867944"
+            ]
+        ]
+    },
+    {
+        "id": "e1497a97.6ade58",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "ad4b9d80.d39eb"
+            ]
+        ]
+    },
+    {
+        "id": "8c42a499.446d68",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array como string em ordem decrescente",
+        "info": "",
+        "x": 300,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ad4b9d80.d39eb",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    \"orange\",\n    \"banana\",\n    \"apple\",\n    \"pear\",\n    \"kiwi\"\n]",
+        "output": "json",
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "2163e62f.7d1f2a"
+            ]
+        ]
+    },
+    {
+        "id": "42ed9ac8.867944",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a4a44453.223968",
+        "type": "sort",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "order": "ascending",
+        "as_num": false,
+        "target": "payload",
+        "targetType": "msg",
+        "msgKey": "$substring(\"0000\" & $string(price), -4) & name",
+        "msgKeyType": "jsonata",
+        "seqKey": "payload",
+        "seqKeyType": "msg",
+        "x": 490,
+        "y": 1060,
+        "wires": [
+            [
+                "c031de28.02458"
+            ]
+        ]
+    },
+    {
+        "id": "113935f2.17c15a",
+        "type": "inject",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1060,
+        "wires": [
+            [
+                "f19e4009.d51f1"
+            ]
+        ]
+    },
+    {
+        "id": "224ecc4c.e84404",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Classifica o payload array de objetos usando a expressão JSONata complexa",
+        "info": "",
+        "x": 350,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f19e4009.d51f1",
+        "type": "template",
+        "z": "ed67f8ab.5fc108",
+        "name": "data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    {\n        \"name\": \"orange\", \n        \"price\": 100\n    },\n    {\n        \"name\": \"banana\",\n        \"price\": 200\n    },\n    {\n        \"name\": \"apple\",\n        \"price\": 100\n    },\n    {\n        \"name\": \"pear\",\n        \"price\": 200\n    },\n    {\n        \"name\": \"kiwi\",\n        \"price\": 200\n    }\n]",
+        "output": "json",
+        "x": 350,
+        "y": 1060,
+        "wires": [
+            [
+                "a4a44453.223968"
+            ]
+        ]
+    },
+    {
+        "id": "c031de28.02458",
+        "type": "debug",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "3262a66.103325a",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "↑ Classifica usando a propriedade do objeto dois (preço e nome) como chaves de classificação",
+        "info": "",
+        "x": 760,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "368675eb.ed39ca",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "Exemplo: Sort Array Payload",
+        "info": "O nó `Sort` (amarelo) pode ser usado para ler um payload com elementos de JavaScript. Em sua configuração, podemos especificar a ordem e a chave que será classificada. A chave de classificação pode ser um valor do payload ou uma expressão JSONata. Se a expressão JSONata for usada, a expressão será aplicada ao valor payload.\n\nObs.: nestes exemplos, estamos usando o nó `Template` (laranja, mostarda) para formatar os nossos itens.",
+        "x": 160,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0525182eb55c6743",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "",
+        "info": "Aqui nós vamos passar rapidamente por alguns nós bem legais que nos ajudam a formatar e classificar certos tipos de payload.",
+        "x": 80,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b43964b7.89eef8",
+        "type": "comment",
+        "z": "ed67f8ab.5fc108",
+        "name": "↑ Classifica usando a propriedade do objeto como chave de classificação",
+        "info": "",
+        "x": 700,
+        "y": 940,
+        "wires": []
+    }
+]

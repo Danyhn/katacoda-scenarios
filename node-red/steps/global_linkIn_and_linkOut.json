@@ -1,162 +1,218 @@
-[{
-    "id": "d7358123.3a2ea",
-    "type": "tab",
-    "label": "Global, Link In and Link out",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "fa9beb76.f40eb8",
-    "type": "function",
-    "z": "d7358123.3a2ea",
-    "name": "function 1",
-    "func": "x = 40\ny = 90\n\nglobal.set(\"x\", x)\nglobal.set(\"y\", y)\n\nmsg.payload = 'Set \"x\" and \"y\" in global'\nreturn msg",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 740,
-    "y": 100,
-    "wires": [
-        ["db471639.09e328"]
-    ]
-}, {
-    "id": "78721695.7bef78",
-    "type": "inject",
-    "z": "d7358123.3a2ea",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 150,
-    "y": 100,
-    "wires": [
-        ["ba1f5da.1f935a"]
-    ]
-}, {
-    "id": "9d4cb358.f3363",
-    "type": "link in",
-    "z": "d7358123.3a2ea",
-    "name": "Function 1",
-    "links": ["ba1f5da.1f935a"],
-    "x": 635,
-    "y": 100,
-    "wires": [
-        ["fa9beb76.f40eb8"]
-    ]
-}, {
-    "id": "ba1f5da.1f935a",
-    "type": "link out",
-    "z": "d7358123.3a2ea",
-    "name": "Inject",
-    "links": ["9d4cb358.f3363"],
-    "x": 255,
-    "y": 100,
-    "wires": []
-}, {
-    "id": "a77695da.39fb18",
-    "type": "debug",
-    "z": "d7358123.3a2ea",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 650,
-    "y": 520,
-    "wires": []
-}, {
-    "id": "db471639.09e328",
-    "type": "link out",
-    "z": "d7358123.3a2ea",
-    "name": "",
-    "links": ["66d397d4.02b998", "e7ea0137.cf8ff"],
-    "x": 835,
-    "y": 100,
-    "wires": []
-}, {
-    "id": "e7ea0137.cf8ff",
-    "type": "link in",
-    "z": "d7358123.3a2ea",
-    "name": "Debug",
-    "links": ["db471639.09e328"],
-    "x": 535,
-    "y": 520,
-    "wires": [
-        ["a77695da.39fb18"]
-    ]
-}, {
-    "id": "b8433b84.2b6da8",
-    "type": "function",
-    "z": "d7358123.3a2ea",
-    "name": "function 2",
-    "func": "msg.x = global.get(\"x\")\nmsg.y = global.get(\"y\")\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 200,
-    "y": 460,
-    "wires": [
-        ["eb23b572.43b028"]
-    ]
-}, {
-    "id": "66d397d4.02b998",
-    "type": "link in",
-    "z": "d7358123.3a2ea",
-    "name": "Function 2",
-    "links": ["db471639.09e328"],
-    "x": 95,
-    "y": 460,
-    "wires": [
-        ["b8433b84.2b6da8"]
-    ]
-}, {
-    "id": "ad275647.dc9bd8",
-    "type": "debug",
-    "z": "d7358123.3a2ea",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 170,
-    "y": 260,
-    "wires": []
-}, {
-    "id": "1375f933.591cd7",
-    "type": "link in",
-    "z": "d7358123.3a2ea",
-    "name": "msg",
-    "links": ["eb23b572.43b028"],
-    "x": 75,
-    "y": 260,
-    "wires": [
-        ["ad275647.dc9bd8"]
-    ]
-}, {
-    "id": "eb23b572.43b028",
-    "type": "link out",
-    "z": "d7358123.3a2ea",
-    "name": "",
-    "links": ["1375f933.591cd7"],
-    "x": 305,
-    "y": 460,
-    "wires": []
-}]
+[
+    {
+        "id": "d7358123.3a2ea",
+        "type": "tab",
+        "label": "Global, Link In and Link out",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fa9beb76.f40eb8",
+        "type": "function",
+        "z": "d7358123.3a2ea",
+        "name": "function 1",
+        "func": "x = 40\ny = 90\n\nglobal.set(\"x\", x)\nglobal.set(\"y\", y)\n\nmsg.payload = 'Set \"x\" and \"y\" in global'\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [
+                "db471639.09e328"
+            ]
+        ]
+    },
+    {
+        "id": "78721695.7bef78",
+        "type": "inject",
+        "z": "d7358123.3a2ea",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "ba1f5da.1f935a"
+            ]
+        ]
+    },
+    {
+        "id": "9d4cb358.f3363",
+        "type": "link in",
+        "z": "d7358123.3a2ea",
+        "name": "Function 1",
+        "links": [
+            "ba1f5da.1f935a"
+        ],
+        "x": 735,
+        "y": 160,
+        "wires": [
+            [
+                "fa9beb76.f40eb8"
+            ]
+        ]
+    },
+    {
+        "id": "ba1f5da.1f935a",
+        "type": "link out",
+        "z": "d7358123.3a2ea",
+        "name": "Inject",
+        "links": [
+            "9d4cb358.f3363"
+        ],
+        "x": 355,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a77695da.39fb18",
+        "type": "debug",
+        "z": "d7358123.3a2ea",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "db471639.09e328",
+        "type": "link out",
+        "z": "d7358123.3a2ea",
+        "name": "",
+        "links": [
+            "66d397d4.02b998",
+            "e7ea0137.cf8ff"
+        ],
+        "x": 935,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e7ea0137.cf8ff",
+        "type": "link in",
+        "z": "d7358123.3a2ea",
+        "name": "Debug",
+        "links": [
+            "db471639.09e328"
+        ],
+        "x": 635,
+        "y": 580,
+        "wires": [
+            [
+                "a77695da.39fb18"
+            ]
+        ]
+    },
+    {
+        "id": "b8433b84.2b6da8",
+        "type": "function",
+        "z": "d7358123.3a2ea",
+        "name": "function 2",
+        "func": "msg.x = global.get(\"x\")\nmsg.y = global.get(\"y\")\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 300,
+        "y": 520,
+        "wires": [
+            [
+                "eb23b572.43b028"
+            ]
+        ]
+    },
+    {
+        "id": "66d397d4.02b998",
+        "type": "link in",
+        "z": "d7358123.3a2ea",
+        "name": "Function 2",
+        "links": [
+            "db471639.09e328"
+        ],
+        "x": 195,
+        "y": 520,
+        "wires": [
+            [
+                "b8433b84.2b6da8"
+            ]
+        ]
+    },
+    {
+        "id": "ad275647.dc9bd8",
+        "type": "debug",
+        "z": "d7358123.3a2ea",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1375f933.591cd7",
+        "type": "link in",
+        "z": "d7358123.3a2ea",
+        "name": "msg",
+        "links": [
+            "eb23b572.43b028"
+        ],
+        "x": 175,
+        "y": 320,
+        "wires": [
+            [
+                "ad275647.dc9bd8"
+            ]
+        ]
+    },
+    {
+        "id": "eb23b572.43b028",
+        "type": "link out",
+        "z": "d7358123.3a2ea",
+        "name": "",
+        "links": [
+            "1375f933.591cd7"
+        ],
+        "x": 405,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d14eaab0f26bb9b6",
+        "type": "comment",
+        "z": "d7358123.3a2ea",
+        "name": "Variáveis globais e links",
+        "info": "Uma opção bastante usada em qualquer solução desenvolvida com Node-RED é a de trabalhar com variáveis globais. Elas nos permitem reutilizar um determinado valor em qualquer flow ou subflow.\n\nNeste exemplo temos o seguinte fluxo:\n\n - O nó `Inject` inicia o payload;\n - A `function 1` prepara e grava valores como variáveis globais, utilizando o comando `global.set()`;\n - A `function 2` recupera os valores através do comando `global.get()`.\n\nDica: tenha a tela de debug ativada e clique no botão do nó `Inject`. Após o término do fluxo, vá em `Context Data`. Está localizado no menu superior direito, na mesma região do ícone de debug (caso não visualize, clique na setinha do menu). Você verá uma região chamada `Global`. Clique no botão de `Refresh` para atualizar essa região e você terá as variáveis que a `function 1` gravou.\n\nAh, e perceba que neste exemplo, estamos utilizando os nós: `Link Out` e `Link In`. Essa é uma boa maneira de diminuir a \"poluição visual\" que as linhas podem causar. Mas cuidado! Isso torna o fluxo mais difícil de ser entendido. Utilize com moderação.",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    }
+]

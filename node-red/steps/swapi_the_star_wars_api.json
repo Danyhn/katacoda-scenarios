@@ -1,224 +1,278 @@
-[{
-    "id": "930725dd.970688",
-    "type": "tab",
-    "label": "SWAPI - The Star Wars API",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "3b361b3.12c84e4",
-    "type": "http request",
-    "z": "930725dd.970688",
-    "name": "People",
-    "method": "GET",
-    "ret": "txt",
-    "paytoqs": "ignore",
-    "url": "https://swapi.dev/api/people/1",
-    "tls": "",
-    "persist": false,
-    "proxy": "",
-    "authType": "",
-    "x": 500,
-    "y": 220,
-    "wires": [
-        ["6eccb9ff.8cb8f8"]
-    ]
-}, {
-    "id": "aab61674.597e68",
-    "type": "debug",
-    "z": "930725dd.970688",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 730,
-    "y": 440,
-    "wires": []
-}, {
-    "id": "70bcddb4.0340d4",
-    "type": "inject",
-    "z": "930725dd.970688",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 100,
-    "y": 120,
-    "wires": [
-        ["325b4b57.41ca04"]
-    ]
-}, {
-    "id": "e10dee76.2d836",
-    "type": "comment",
-    "z": "930725dd.970688",
-    "name": "SWAPI - The Star Wars API",
-    "info": "https://swapi.dev/",
-    "x": 700,
-    "y": 60,
-    "wires": []
-}, {
-    "id": "6eccb9ff.8cb8f8",
-    "type": "json",
-    "z": "930725dd.970688",
-    "name": "",
-    "property": "payload",
-    "action": "",
-    "pretty": false,
-    "x": 710,
-    "y": 340,
-    "wires": [
-        ["aab61674.597e68"]
-    ]
-}, {
-    "id": "d73b19bf.8d0f68",
-    "type": "switch",
-    "z": "930725dd.970688",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [{
-        "t": "eq",
-        "v": "people",
-        "vt": "str"
-    }, {
-        "t": "eq",
-        "v": "planets",
-        "vt": "str"
-    }, {
-        "t": "eq",
-        "v": "starships",
-        "vt": "str"
-    }, {
-        "t": "eq",
-        "v": "films",
-        "vt": "str"
-    }],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 4,
-    "x": 290,
-    "y": 340,
-    "wires": [
-        ["3b361b3.12c84e4"],
-        ["d6fb47c1.0b5ac8"],
-        ["4f9a529d.647e0c"],
-        ["b2349ec.e2a5b6"]
-    ]
-}, {
-    "id": "d6fb47c1.0b5ac8",
-    "type": "http request",
-    "z": "930725dd.970688",
-    "name": "Planets",
-    "method": "GET",
-    "ret": "txt",
-    "paytoqs": "ignore",
-    "url": "https://swapi.dev/api/planets/3",
-    "tls": "",
-    "persist": false,
-    "proxy": "",
-    "authType": "",
-    "x": 500,
-    "y": 300,
-    "wires": [
-        ["6eccb9ff.8cb8f8"]
-    ]
-}, {
-    "id": "4f9a529d.647e0c",
-    "type": "http request",
-    "z": "930725dd.970688",
-    "name": "Starships",
-    "method": "GET",
-    "ret": "txt",
-    "paytoqs": "ignore",
-    "url": "https://swapi.dev/api/starships/9/",
-    "tls": "",
-    "persist": false,
-    "proxy": "",
-    "authType": "",
-    "x": 500,
-    "y": 380,
-    "wires": [
-        ["6eccb9ff.8cb8f8"]
-    ]
-}, {
-    "id": "325b4b57.41ca04",
-    "type": "function",
-    "z": "930725dd.970688",
-    "name": "",
-    "func": "msg.payload = [\"people\", \"planets\", \"starships\", \"films\"]\n\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 260,
-    "y": 120,
-    "wires": [
-        ["cc8e9962.d2ede8"]
-    ]
-}, {
-    "id": "b2349ec.e2a5b6",
-    "type": "http request",
-    "z": "930725dd.970688",
-    "name": "Films",
-    "method": "GET",
-    "ret": "obj",
-    "paytoqs": "ignore",
-    "url": "https://swapi.dev/api/films/2/",
-    "tls": "",
-    "persist": false,
-    "proxy": "",
-    "authType": "",
-    "x": 510,
-    "y": 460,
-    "wires": [
-        ["aab61674.597e68"]
-    ]
-}, {
-    "id": "cc8e9962.d2ede8",
-    "type": "random-item",
-    "z": "930725dd.970688",
-    "name": "",
-    "input": "payload",
-    "inputType": "msg",
-    "output": "payload",
-    "outputType": "msg",
-    "number": 1,
-    "x": 430,
-    "y": 120,
-    "wires": [
-        ["92e76aff.8c3c28"]
-    ]
-}, {
-    "id": "92e76aff.8c3c28",
-    "type": "link out",
-    "z": "930725dd.970688",
-    "name": "",
-    "links": ["ee0ba11f.2d0f2"],
-    "x": 535,
-    "y": 120,
-    "wires": []
-}, {
-    "id": "ee0ba11f.2d0f2",
-    "type": "link in",
-    "z": "930725dd.970688",
-    "name": "",
-    "links": ["92e76aff.8c3c28"],
-    "x": 95,
-    "y": 340,
-    "wires": [
-        ["d73b19bf.8d0f68"]
-    ]
-}]
+[
+    {
+        "id": "930725dd.970688",
+        "type": "tab",
+        "label": "SWAPI - The Star Wars API",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3b361b3.12c84e4",
+        "type": "http request",
+        "z": "930725dd.970688",
+        "name": "People",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://swapi.dev/api/people/1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "6eccb9ff.8cb8f8"
+            ]
+        ]
+    },
+    {
+        "id": "aab61674.597e68",
+        "type": "debug",
+        "z": "930725dd.970688",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "70bcddb4.0340d4",
+        "type": "inject",
+        "z": "930725dd.970688",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "325b4b57.41ca04"
+            ]
+        ]
+    },
+    {
+        "id": "e10dee76.2d836",
+        "type": "comment",
+        "z": "930725dd.970688",
+        "name": "SWAPI - The Star Wars API",
+        "info": "Nessa aula, veremos um novo nó chamado `http request`. Com ele nós conseguimos fazer uma requisição para uma API de maneira bastante simples. Também teremos os nós `Switch` e `Template` que nos ajudarão tanto a tomar decisões quanto formatar o retorno da nossa requisição.\n\nO fluxo é o seguinte:\n\n - O nó `Inject` inicia o payload;\n - O nó `Function` prepara um array com alguns valores;\n - O nó `random-item` decidirá qual o valor seguirá para o próximo nó;\n - E o nó `Switch` escolherá qual o caminho a seguir dependendo do resultado anterior;\n - Já o nó `Template` nos ajudará com a formatação da resposta da nossa requisição.\n\nDica: tenha a tela de debug atividade e clique no botão do nó `Inject`. Como resultado, você verá personagens/objetos da série Star Wars!\n\nDica 2: altere o número que está definido na URL, dentro do nó `http request`, para que tenha outros resultados. Exemplos: api/people/1, api/people/2, api/people/3, etc..\n\nObs.: por se tratar de um fluxo um pouco mais complexo com a uma chamada externa, podemos encontrar alguns bugs. Caso se depare com algum comportamento estranho, reinicie a página ou o seu ambiente.\n\n\nAPI utilizada:\nhttps://swapi.dev/",
+        "x": 700,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6eccb9ff.8cb8f8",
+        "type": "json",
+        "z": "930725dd.970688",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "aab61674.597e68"
+            ]
+        ]
+    },
+    {
+        "id": "d73b19bf.8d0f68",
+        "type": "switch",
+        "z": "930725dd.970688",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "people",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "planets",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "starships",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "films",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "3b361b3.12c84e4"
+            ],
+            [
+                "d6fb47c1.0b5ac8"
+            ],
+            [
+                "4f9a529d.647e0c"
+            ],
+            [
+                "b2349ec.e2a5b6"
+            ]
+        ]
+    },
+    {
+        "id": "d6fb47c1.0b5ac8",
+        "type": "http request",
+        "z": "930725dd.970688",
+        "name": "Planets",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://swapi.dev/api/planets/3",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "6eccb9ff.8cb8f8"
+            ]
+        ]
+    },
+    {
+        "id": "4f9a529d.647e0c",
+        "type": "http request",
+        "z": "930725dd.970688",
+        "name": "Starships",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://swapi.dev/api/starships/9/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "6eccb9ff.8cb8f8"
+            ]
+        ]
+    },
+    {
+        "id": "325b4b57.41ca04",
+        "type": "function",
+        "z": "930725dd.970688",
+        "name": "",
+        "func": "msg.payload = [\"people\", \"planets\", \"starships\", \"films\"]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 260,
+        "y": 120,
+        "wires": [
+            [
+                "cc8e9962.d2ede8"
+            ]
+        ]
+    },
+    {
+        "id": "b2349ec.e2a5b6",
+        "type": "http request",
+        "z": "930725dd.970688",
+        "name": "Films",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://swapi.dev/api/films/2/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "credentials": {},
+        "x": 510,
+        "y": 460,
+        "wires": [
+            [
+                "aab61674.597e68"
+            ]
+        ]
+    },
+    {
+        "id": "92e76aff.8c3c28",
+        "type": "link out",
+        "z": "930725dd.970688",
+        "name": "",
+        "links": [
+            "ee0ba11f.2d0f2"
+        ],
+        "x": 535,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ee0ba11f.2d0f2",
+        "type": "link in",
+        "z": "930725dd.970688",
+        "name": "",
+        "links": [
+            "92e76aff.8c3c28"
+        ],
+        "x": 95,
+        "y": 340,
+        "wires": [
+            [
+                "d73b19bf.8d0f68"
+            ]
+        ]
+    },
+    {
+        "id": "cc8e9962.d2ede8",
+        "type": "random-item",
+        "z": "930725dd.970688",
+        "name": "",
+        "input": "payload",
+        "inputType": "msg",
+        "output": "payload",
+        "outputType": "msg",
+        "number": 1,
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "92e76aff.8c3c28"
+            ]
+        ]
+    }
+]

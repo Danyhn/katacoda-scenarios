@@ -1,124 +1,162 @@
-[{
-    "id": "45c91bf5.c33c34",
-    "type": "subflow",
-    "name": "Number?",
-    "info": "",
-    "category": "",
-    "in": [{
+[
+    {
+        "id": "45c91bf5.c33c34",
+        "type": "subflow",
+        "name": "Number?",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "70b46aa6.3b34e4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 640,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "70b46aa6.3b34e4",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "70b46aa6.3b34e4",
+        "type": "function",
+        "z": "45c91bf5.c33c34",
+        "name": "",
+        "func": "if (typeof (msg.payload) == \"number\") {\n    x = msg.payload\n    msg.payload = `The double of ${ x } is ` + msg.payload * 2\n    return msg\n} else {\n    msg.payload = \"No number arrived here...\"\n    return msg\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ab1c724.9ddcb8",
+        "type": "tab",
+        "label": "Random and Subflow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1680f970.40a307",
+        "type": "inject",
+        "z": "7ab1c724.9ddcb8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
         "x": 100,
-        "y": 180,
-        "wires": [{
-            "id": "70b46aa6.3b34e4"
-        }]
-    }],
-    "out": [{
-        "x": 640,
-        "y": 180,
-        "wires": [{
-            "id": "70b46aa6.3b34e4",
-            "port": 0
-        }]
-    }],
-    "env": [],
-    "color": "#DDAA99"
-}, {
-    "id": "70b46aa6.3b34e4",
-    "type": "function",
-    "z": "45c91bf5.c33c34",
-    "name": "",
-    "func": "if (typeof (msg.payload) == \"number\") {\n    x = msg.payload\n    msg.payload = `The double of ${ x } is ` + msg.payload * 2\n    return msg\n} else {\n    msg.payload = \"No number arrived here...\"\n    return msg\n}",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 360,
-    "y": 180,
-    "wires": [
-        []
-    ]
-}, {
-    "id": "7ab1c724.9ddcb8",
-    "type": "tab",
-    "label": "Random and Subflow",
-    "disabled": false,
-    "info": ""
-}, {
-    "id": "1680f970.40a307",
-    "type": "inject",
-    "z": "7ab1c724.9ddcb8",
-    "name": "",
-    "props": [{
-        "p": "payload"
-    }, {
-        "p": "topic",
-        "vt": "str"
-    }],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 100,
-    "y": 200,
-    "wires": [
-        ["f084a963.3eb708"]
-    ]
-}, {
-    "id": "1de0d3e2.a0558c",
-    "type": "subflow:45c91bf5.c33c34",
-    "z": "7ab1c724.9ddcb8",
-    "name": "",
-    "env": [],
-    "x": 580,
-    "y": 240,
-    "wires": [
-        ["5af34ad5.161be4"]
-    ]
-}, {
-    "id": "5af34ad5.161be4",
-    "type": "debug",
-    "z": "7ab1c724.9ddcb8",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 770,
-    "y": 140,
-    "wires": []
-}, {
-    "id": "bcd2a5f7.c56c08",
-    "type": "random-item",
-    "z": "7ab1c724.9ddcb8",
-    "name": "",
-    "input": "payload",
-    "inputType": "msg",
-    "output": "payload",
-    "outputType": "msg",
-    "number": 1,
-    "x": 430,
-    "y": 140,
-    "wires": [
-        ["1de0d3e2.a0558c"]
-    ]
-}, {
-    "id": "f084a963.3eb708",
-    "type": "function",
-    "z": "7ab1c724.9ddcb8",
-    "name": "",
-    "func": "msg.payload = [Math.floor(Math.random() * 100), \"A\"]\n\nreturn msg",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 260,
-    "y": 240,
-    "wires": [
-        ["bcd2a5f7.c56c08"]
-    ]
-}]
+        "y": 200,
+        "wires": [
+            [
+                "f084a963.3eb708"
+            ]
+        ]
+    },
+    {
+        "id": "1de0d3e2.a0558c",
+        "type": "subflow:45c91bf5.c33c34",
+        "z": "7ab1c724.9ddcb8",
+        "name": "",
+        "env": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "5af34ad5.161be4"
+            ]
+        ]
+    },
+    {
+        "id": "5af34ad5.161be4",
+        "type": "debug",
+        "z": "7ab1c724.9ddcb8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f084a963.3eb708",
+        "type": "function",
+        "z": "7ab1c724.9ddcb8",
+        "name": "",
+        "func": "msg.payload = [Math.floor(Math.random() * 100), \"A\"]\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "bcd2a5f7.c56c08"
+            ]
+        ]
+    },
+    {
+        "id": "bcd2a5f7.c56c08",
+        "type": "random-item",
+        "z": "7ab1c724.9ddcb8",
+        "name": "",
+        "input": "payload",
+        "inputType": "msg",
+        "output": "payload",
+        "outputType": "msg",
+        "number": 1,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "1de0d3e2.a0558c"
+            ]
+        ]
+    },
+    {
+        "id": "c3b77551be8a1559",
+        "type": "comment",
+        "z": "7ab1c724.9ddcb8",
+        "name": "Plugin e Subflow",
+        "info": "Nessa aula temos duas ótimas possibilidades no Node-RED: instalação de componentes externos e criação de subflows.\n\nNeste exemplo estamos utilizando um plugin que nos possibilita aleatorizar um determinado conjunto de valores, que no nosso caso é um número ou uma letra. O nó Function está preparando um payload contendo um array com um número aleatório e a letra \"A\".\n\nQuando esse payload chega ao componente `random-item`, este decidirá qual o valor será repassado para ao subflow chamado `Number?`. Neste subflow contém apenas uma função:\n\n - Se o valor passado for um número, retornará o dobro desse número;\n - Se o valor for uma letra, retornará uma mensagem dizendo que não encontrou nenhum número.\n\nClique no botão do nó `Inject` e veja a saída na tela lateral de debug. Não se esqueça de entrar em cada componente para enteder exatamente o que está acontecendo neste fluxo.\n\nDica: para entrar no subflow, clique duas vezes no componente e em seguida, clique em `Edit Subflow Template`",
+        "x": 140,
+        "y": 80,
+        "wires": []
+    }
+]
